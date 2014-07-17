@@ -50,7 +50,7 @@ switch (_filter) do
  		["U_C_Driver_4",nil,3700],
 		["U_B_Protagonist_VR",nil,3700],
 		["U_I_Protagonist_VR",nil,3700],
-		["U_O_Protagonist_VR",nil,3700],
+		["U_O_Protagonist_VR",nil,3700]
 		//["U_B_Soldier_VR",nil,3700],
 		//["U_I_Soldier_VR",nil,3700],
 		//["U_O_Soldier_VR",nil,3700],
