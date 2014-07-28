@@ -5,11 +5,11 @@
 	
 	Description:
 	store an item in a house
-
-	Edited and Modified by: CDawg
 */
 private["_ctrl","_num","_totalWeight","_itemWeight","_veh_data","_inv","_index","_val"];
 disableSerialization;
+
+_house = nearestObject [player, "House"];
 
 _ctrl = ctrlSelData(8503);
 _num = ctrlText 8506;
@@ -18,13 +18,12 @@ _num = parseNumber(_num);
 if(_num < 1) exitWith {hint "You can't enter anything below 1!";};
 
 _weight = 0;
-_used = (cursorTarget getVariable ["Trunk", [[],0]]) select 1;
-_boxes = nearestObjects [position player, ["Land_Box_AmmoOld_F","Box_IND_WpsSpecial_F"], 5];
-{	
-	_box_data = [_x] call life_fnc_vehicleWeight;
-	_weight = _weight + (_box_data select 0);
-	_used = _used + (_box_data select 1);
-}forEach _boxes;
+_used = (_house getVariable ["Trunk", [[],0]]) select 1;
+_box = nearestObject [position _house,"B_supplyCrate_F"];
+
+_box_data = [_box] call life_fnc_vehicleWeight;
+_weight = _weight + (_box_data select 0);
+_used = _used + (_box_data select 1);
 
 _totalWeight = [_weight, _used];
 //diag_log format ["TOTAL WEIGHT : %1", _totalWeight];

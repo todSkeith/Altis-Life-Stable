@@ -51,6 +51,8 @@ life_actions = [];
 life_roadblock = ObjNull;
 life_roadcone = ObjNull;
 life_isUnconscious = false;
+life_god = false;
+holstered = false;
 
 
 
@@ -240,7 +242,8 @@ life_licenses =
 	["license_civ_bh","civ"],
 	["license_civ_logging","civ"],
 	["license_medic_air","medic"],
-	["license_civ_home", "civ"]
+	["license_civ_home", "civ"],
+	["license_civ_c3", "civ"]
 ];
 
 //Setup License Variables
@@ -302,7 +305,7 @@ sell_array =
 	["glass",900],
 	["fuelF",500],
 	["spikeStrip",1200],
-	["moonshine",950],
+	["moonshine",750],
 	["cement",1450],
 	["fcrab",400],
 	["mcrab",700],
@@ -352,8 +355,8 @@ buy_array =
 	["RoadCone",150],
 	["RoadBlockWood",1500],
 	["moonshine", 950],
-	["storage1",50000],
-    ["storage2",250000],
+//	["storage1",50000],
+    ["storage2",100000],
     ["crowbar", 15000],
     ["lethal", 55000]
 ];

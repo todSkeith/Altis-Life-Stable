@@ -18,8 +18,8 @@ switch (_filter) do
 	case 0:
 	{
 		[
-			["U_B_Wetsuit","Black Wetsuit",2000],
-			["U_B_Wetsuit","Green Wetsuit",2000]
+			["U_O_Wetsuit","Camo Wetsuit",2000],
+			["U_I_Wetsuit","Green Wetsuit",2000]
 		];
 	};
 	
@@ -43,7 +43,7 @@ switch (_filter) do
 	case 3:
 	{
 		[
-			["V_RebreatherB","Black Rebreather",5000],
+			["V_RebreatherO","Camo Rebreather",5000],
 			["V_RebreatherIA","Green Rebreather",5000]
 		];
 	};

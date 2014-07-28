@@ -27,5 +27,5 @@ if(isNull _barrier2) exitWith {life_barrier2 = ObjNull;};
 _barrier1 setPos [(getPos _barrier1 select 0),(getPos _barrier1 select 1),0];
 _barrier2 setPos [(getPos _barrier2 select 0),(getPos _barrier2 select 1),0];
 
-life_action_barrierPickup = player addAction["Pack up Wooden Barrier",life_fnc_packupRoadblock,"",0,false,false,"",
+player addAction["Pack up Wooden Barrier",life_fnc_packupRoadblock,[_barrier1,_barrier2],0,false,false,"",
 ' _bar = nearestObjects[getPos player,["RoadBarrier_F"],8] select 0; !isNil "_bar" && !isNil {(_bar getVariable "item")} '];

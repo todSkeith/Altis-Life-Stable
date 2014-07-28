@@ -53,25 +53,31 @@ switch (life_veh_shop) do
 		ctrlSetText[2301,"Service Truck Shop"];
 	};
 
+	case "merc_1":
+	{
+		if(playerSide == west) exitWith {_kill = "You are not a civilian."};
+		ctrlSetText[2301,"Mercenary Vehicle Depot"];
+	};
+
+	case "merc_2":
+	{
+		if(playerSide == west) exitWith {_kill = "You are not a civilian."};
+		ctrlSetText[2301,"Mercenary Vehicle Depot"];
+	};
+
+
 	case "donator_1":
 	{
 		if(playerSide == west) exitWith {_kill = "You are not a civilian."};
-		if(__GETC__(life_donator) == 0) exitWith {_kill = "You are not a donator!"};
 		ctrlSetText[2301,"Service Truck Shop"];
 	};
 
 	case "donator_2":
 	{
-		if(playerSide == west) exitWith {_kill = "You are not a civilian."};
-		if(__GETC__(life_donator) == 0) exitWith {_kill = "You are not a donator!"};
-		ctrlSetText[2301,"Service Truck Shop"];
-	};
-
-	case "reb_v_1":
-	{
 		if(playerSide == west) exitWith {_kill =  "You are not a civilian."};
 		ctrlSetText[2301,"Rebel Car Shop"];
 	};
+
 
 	case "reb_v_1":
 	{
@@ -202,18 +208,16 @@ switch (life_veh_shop) do
 		ctrlSetText[2301,"Cop Boat Shop"];
 	};
 
-	case "donator_heli":
+	case "merc_heli":
 	{
-		if(__GETC__(life_donator) < 1) exitWith {_kill = "You Have Not Donated!"};
 		if(playerSide == west) exitWith {_kill = "You are not a civilian."};
-		ctrlSetText[2301,"Donator Air Shop"];
+		ctrlSetText[2301,"Mercenary Air Shop"];
 	};
 
-	case "donator_car":
+	case "merc_car":
 	{
-		if(__GETC__(life_donator) < 1) exitWith {_kill = "You Have Not Donated!"};
 		if(playerSide == west) exitWith {_kill = "You are not a civilian."};
-		ctrlSetText[2301,"Donator Car Shop"];
+		ctrlSetText[2301,"Mercenary Car Shop"];
 	};
 
 	case "medic_car_1":

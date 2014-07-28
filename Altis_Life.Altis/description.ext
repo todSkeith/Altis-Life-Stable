@@ -214,3 +214,14 @@ class CfgNotifications
 		priority = 5;
 	};
 };
+
+class CfgUnitInsignia
+{
+	class SBSF
+	{
+		displayName = "Strike Back Super Force";
+		author = "Bobbus";
+		texture = "images\SBSF.paa";
+		textureVehicle = "";
+	};
+};

@@ -21,6 +21,8 @@ _handgunitems = handGunItems player;
 _uitems = [];
 _vitems = [];
 _bitems = [];
+_yitems = [];
+_itemArray = [];
 
 if(_uniform != "") then {{_uitems set[count _uitems,_x];} foreach (uniformItems player);};
 if(_vest != "") then {{_vitems set[count _vitems,_x];} foreach (vestItems player);};
@@ -52,4 +54,18 @@ if("Laserdesignator" in assignedItems player) then
 
 player selectWeapon _curWep;
 
-cop_gear = [_primary,_handgun,_magazines,_uniform,_vest,_backpack,_items,_primitems,_secitems,_handgunitems,_uitems,_vitems,_bitems];
+{
+_itemArray = _itemArray + [[_x,missionNamespace getVariable [_x,0]]];
+} forEach life_inv_items;
+
+{
+    _name = (_x select 0);
+    _val = (_x select 1);
+    if (_val > 0) then {
+        for "_i" from 1 to _val do {
+            _yItems = _yItems + [_name];
+        };
+    };
+} forEach _itemArray;
+
+cop_gear = [_primary,_handgun,_magazines,_uniform,_vest,_backpack,_items,_primitems,_secitems,_handgunitems,_uitems,_vitems,_bitems,_yItems];

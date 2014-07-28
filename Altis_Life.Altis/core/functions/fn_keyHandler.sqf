@@ -117,10 +117,14 @@ switch (_code) do
 	//Holster (Shift - H for now)
 	case 35: {
 		if (_shift && !_alt && !_ctrlKey) then {
-			if ((time - life_holster_time) > 4) then {
-				life_holster_time = time;
-				[] spawn life_fnc_holsterWeapon;
-			};
+			if(holstered) then {
+				player action ["hideWeapon",player,player,0];
+				holstered = false;
+			}
+			else {
+				player action ["hideWeapon",player,player,100];
+				holstered = true;
+			}
 		};
 	};
 
@@ -261,7 +265,7 @@ switch (_code) do
 			_owners = _veh getvariable "vehicle_info_owners";
 			_uid = getPlayerUID player;
 
-			if((_veh in life_vehicles || (_uid in (_owners select 0)) && player distance _veh < 8))then
+			if((_veh in life_vehicles || (_uid in (_owners select 0))) && player distance _veh < 8)then
 			{
 				if(_locked == 2) then
 				{
@@ -292,6 +296,10 @@ switch (_code) do
 			};
 		};
 	};
+};
+
+if (_code in (actionKeys "Throw") && (player getVariable "restrained" OR player getVariable "transporting" OR player getVariable "zipTie" OR player getVariable "unconscious" OR player getVariable "surrender" or (animationState player == "Incapacitated"))) then {
+	_handled = true;
 };
 
 //Thanks to Asylum

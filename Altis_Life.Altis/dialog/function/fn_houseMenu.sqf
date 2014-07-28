@@ -7,7 +7,6 @@
 	Shows house ownership menu
 */
 private["_house","_owners","_locked","_owner","_price"];
-if(dialog) exitWith {};
 _house = cursorTarget;
 if(isNull _house || !(_house isKindOf "House")) exitWith {systemChat "Bad House";};
 

@@ -6,16 +6,15 @@
 	Packs up the nearest Roadblock.
 */
 
-private["_barrier1","_barrier2"];
-_barrier1 = nearestObjects[getPos player,["RoadBarrier_F"],8] select 0;
-_barrier2 = nearestObjects[getPos player,["RoadBarrier_F"],8] select 1;
-if(isNil "_barrier1") then {};
+private["_barriers"];
+_action = _this select 2;
+_barriers = _this select 3;
+if(isNil "_barriers") then {};
 
 if([true,"RoadBlockWood",1] call life_fnc_handleInv) then
 {
 	titleText["You have removed the Road Block.","PLAIN"];
-	player removeAction life_action_barrierPickup;
+	player removeAction _action;
 	life_action_barrierPickup = nil;
-	deleteVehicle _barrier1;	
-	deleteVehicle _barrier2;
+	{ deleteVehicle _x } forEach _barriers;
 };

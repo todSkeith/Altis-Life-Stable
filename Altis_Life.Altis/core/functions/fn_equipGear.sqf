@@ -44,3 +44,6 @@ switch (true) do {
 		[player,"images\tiee11.jpg"] call life_fnc_setUniform;
 	};
 };
+if (playerSide == west) then {
+	player setVariable ["coplevel",__GETC__(life_coplevel)];
+};

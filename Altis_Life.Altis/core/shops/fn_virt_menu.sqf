@@ -6,7 +6,7 @@
 	Initialize the virtual shop menu.
 */
 if ((vehicle player) != player) exitWith { hint "This action cannot be performed from within a vehicle." };
-if ((player distance cursorTarget) > 7) exitWith { hint "You are too far away." };
+//if ((player distance cursorTarget) > 7) exitWith { hint "You are too far away." };
 
 private["_shop"];
 _shop = _this select 3;

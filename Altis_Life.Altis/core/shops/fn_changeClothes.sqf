@@ -11,15 +11,17 @@ _control = (_this select 0) select 0;
 _selection = (_this select 0) select 1;
 _price = (findDisplay 3100) displayCtrl 3102;
 _total = (findDisplay 3100) displayCtrl 3106;
+[] call life_fnc_donatorLevel;
 if(_selection == -1) exitWith {hint "No selection";};
 if(isNull _control) exitWith {hint "No Display"};
 
-life_clothing_purchase set[life_clothing_filter,(_control lbValue _selection)];
+life_clothing_purchase set[life_clothing_filter,round(((_control lbValue _selection)/100)*donatorLevel)];
 
 _data = _control lbData _selection;
 
 [_data,true] call life_fnc_handleItem;
-_price ctrlSetStructuredText parseText format ["Price: <t color='#8cff9b'>$%1</t>",[(_control lbValue _selection)] call life_fnc_numberText];
+
+_price ctrlSetStructuredText parseText format ["Price: <t color='#8cff9b'>$%1</t>",[round(((_control lbValue _selection)/100)*donatorLevel)] call life_fnc_numberText];
 
 _totalPrice = 0;
 {

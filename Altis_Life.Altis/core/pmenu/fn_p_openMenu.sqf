@@ -15,7 +15,10 @@ switch(playerSide) do
 	case west: 
 	{
 		ctrlShow[2011,false];
-		
+		if ((leader group player) != player) then
+		{
+			ctrlShow[2012,false];
+		};
 	};
 	
 	case independent:

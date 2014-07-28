@@ -4,8 +4,6 @@
 	
 	Description:
 	open the house storage
-
-	Edited and Modified by: CDawg
 */
 private["_house","_veh_data"];
 if(dialog) exitWith {};
@@ -20,7 +18,7 @@ ctrlSetText[8501,format["House Trunk - %1",getText(configFile >> "CfgVehicles" >
 
 _weight = 0;
 _used = (_house getVariable ["Trunk", [[],-1]]) select 1;
-_boxes = nearestObjects [position _house, ["Land_Box_AmmoOld_F","Box_IND_WpsSpecial_F"], 5];
+_boxes = nearestObjects [position _house, ["Land_Box_AmmoOld_F","B_supplyCrate_F"], 5];
 {	
 	_box_data = [_x] call life_fnc_vehicleWeight;
 	_weight = _weight + (_box_data select 0);

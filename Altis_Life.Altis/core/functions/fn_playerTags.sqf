@@ -8,9 +8,8 @@
 onEachFrame
 {
     private["_vis","_pos","_near","_name","_icon","_width","_height"];
-    _near = getPos player nearEntities ["Man",20];
     {
-        if(player distance _x < 20 && isPlayer _x && _x != player) then
+        if(isPlayer _x && _x != player && [getPos _x select 0, getPos _x select 1, getPos _x select 2] distance [getPos player select 0, getPos player select 1, getPos player select 2] < 20) then
         {
             _vis = lineIntersects [eyePos player, eyePos _x,player, _x];
             if(!_vis) then
@@ -32,12 +31,8 @@ onEachFrame
 					case (9) : {_name = format["Chief %1", name _x];_icon = MISSION_ROOT + "icons\Chief_icon.paa";};
 					default {_name = name _x; _icon = ""; _width = 0; _height = 0;}
 				};
-                if (_x getVariable["coplevel", 0] > 0) then
-				{
-					_icon = [((_x getVariable["coplevel", 0]) - 1),"texture"] call BIS_fnc_rankParams;
-				};
-                drawIcon3D [_icon,[1,1,1,1],_pos,_width,_height,0,_name,0,0.04];
+                drawIcon3D [_icon,[(profilenamespace getvariable ['igui_text_rgb_r',1]),(profilenamespace getvariable ['igui_text_rgb_g',1]),(profilenamespace getvariable ['igui_text_rgb_b',1]),(profilenamespace getvariable ['igui_text_rgb_r',1])],_pos,_width,_height,0,_name,0,0.04];
             };
         };
-    } foreach _near;
+    } foreach playableUnits;
 }

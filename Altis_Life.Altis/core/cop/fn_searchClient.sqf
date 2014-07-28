@@ -53,6 +53,19 @@ if (vest player != "") then {
                 };
         } forEach (vestItems player);
 };
+if (backpack player != "") then {
+        {
+                _cfg = [_x] call life_fnc_fetchCfgDetails;
+                if(count _cfg > 0) then {
+                        if((_cfg select 6) == "CfgWeapons") then {
+                                if((_cfg select 4) in [1,2,4,5]) then {
+                                        _guns set [count _guns, (_cfg select 1)];
+                                };
+                        };
+                };
+        } forEach (backpackItems player);
+};
+
 
 // Check for holstered weapons.
 if (!isNil {life_holstered_weapon}) then {

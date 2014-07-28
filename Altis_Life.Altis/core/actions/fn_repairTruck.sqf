@@ -43,6 +43,7 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 					if(player != vehicle player) exitWith {};
 					if(life_interrupted) exitWith {};
 				} forEach _vehHPs;
+				_this setDamage 0;
 			};
 		};
 		

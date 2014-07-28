@@ -28,6 +28,7 @@ _handgunitems = _loadout select 9;
 _uitems = _loadout select 10;
 _vitems = _loadout select 11;
 _bitems = _loadout select 12;
+_yitems = _loadout select 13;
 
 //Strip the unit down
 RemoveAllWeapons player;
@@ -68,3 +69,8 @@ if(primaryWeapon player != "") then
 {
 	player selectWeapon (primaryWeapon player);
 };
+
+{
+    _item = [_x,1] call life_fnc_varHandle;
+    [true,_item,1] call life_fnc_handleInv;
+} foreach (_yItems)

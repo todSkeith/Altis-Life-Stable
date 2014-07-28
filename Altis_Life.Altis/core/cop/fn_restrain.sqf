@@ -27,7 +27,10 @@ if(isNull _cop) exitWith {};
 };
 
 titleText[format["You have been restrained by %1",name _cop],"PLAIN"];
-				
+
+life_myGrp = group player;
+[player] joinSilent grpNull;
+	
 while {player getVariable "restrained"} do
 {
 	player playMove "AmovPercMstpSnonWnonDnon_Ease";
@@ -49,6 +52,9 @@ while {player getVariable "restrained"} do
 		//disableUserInput false;
 	};
 };
+
+player setVariable ["zipTie",false,true];
+[player] joinSilent life_myGrp;
 
 //disableUserInput false;
 	

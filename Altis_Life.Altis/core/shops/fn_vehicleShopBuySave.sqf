@@ -23,25 +23,25 @@ switch(life_veh_shop) do
 		};
 	};
 
-	case "donator_1":
+	case "merc_1":
 	{
-		_sp = getMarkerPos "donator_1";
-		_dir = markerDir "donator_1";
+		_sp = getMarkerPos "merc_1";
+		_dir = markerDir "merc_1";
 		if(count(nearestObjects[_sp,["Car","Ship","Air"],2]) > 0) then
 		{
-			_sp = getMarkerPos "donator_1_1";
-			_dir = markerDir "donator_1_1";
+			_sp = getMarkerPos "merc_1_1";
+			_dir = markerDir "merc_1_1";
 		};
 	};
 
-	case "donator_2":
+	case "merc_2":
 	{
-		_sp = getMarkerPos "donator_2";
-		_dir = markerDir "donator_2";
+		_sp = getMarkerPos "merc_2";
+		_dir = markerDir "merc_2";
 		if(count(nearestObjects[_sp,["Car","Ship","Air"],5]) > 0) then
 		{
-			_sp = getMarkerPos "donator_2_1";
-			_dir = markerDir "donator_2_1";
+			_sp = getMarkerPos "merc_2_1";
+			_dir = markerDir "merc_2_1";
 		};
 	};
 
@@ -198,16 +198,16 @@ switch(life_veh_shop) do
 		_dir = markerDir "cop_ship_1";
 	};
 
-	case "donator_heli":
+	case "merc_heli":
 	{
-		_sp = getMarkerPos "donator_heli";
-		_dir = markerDir "donator_heli";
+		_sp = getMarkerPos "merc_heli";
+		_dir = markerDir "merc_heli";
 	};
 
-	case "donator_car":
+	case "merc_car":
 	{
-		_sp = getMarkerPos "donator_car";
-		_dir = markerDir "donator_car";
+		_sp = getMarkerPos "merc_car";
+		_dir = markerDir "merc_car";
 	};
 
 	case "medic_car_1":
@@ -235,7 +235,7 @@ switch(life_veh_shop) do
 };
 _index = lbCurSel 2302;
 _veh = lbData[2302,_index];
-if(_veh == "B_G_Offroad_01_armed_F" OR _veh == "B_MRAP_01_hmg_F") exitWith {hint "This vehicle cannot be bought permanently";};
+if(_veh in ["B_G_Offroad_01_armed_F","B_MRAP_01_hmg_F","B_MRAP_01_F","O_MRAP_02_F"]) exitWith {hint "This vehicle cannot be bought permanently";};
 if(!([_veh] call life_fnc_vehShopLicenses) && playerSide != independent) exitWith {hint "You do not have the required license!"};
 _color = lbValue[2303,(lbCurSel 2303)];
 _price = lbValue[2302,(lbCurSel 2302)];

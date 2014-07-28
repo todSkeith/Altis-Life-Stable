@@ -12,10 +12,10 @@ if(_var == "") exitWith {""};
 switch (_var) do
 {
 	//Virtual Inventory Items
-	case "life_inv_oilu": {"Unprocessed Oil"};
-	case "life_inv_oilp": {"Processed Oil"};
-	case "life_inv_heroinu": {"Unprocessed Heroin"};
-	case "life_inv_heroinp": {"Processed Heroin"};
+	case "life_inv_oilu": {"Crude Oil"};
+	case "life_inv_oilp": {"Petroleum"};
+	case "life_inv_heroinu": {"Opium"};
+	case "life_inv_heroinp": {"Heroin"};
 	case "life_inv_cannabis": {"Cannabis"};
 	case "life_inv_marijuana": {"Marijuana"};
 	case "life_inv_apple": {"Apple"};
@@ -42,17 +42,17 @@ switch (_var) do
 	case "life_inv_goldore": {"Gold Ore"};
 	case "life_inv_goldr": {"Gold Ingot"};
 	case "life_inv_sand": {"Sand"};
-	case "life_inv_salt": {"Salt"};
+	case "life_inv_salt": {"Rock Salt"};
 	case "life_inv_saltr": {"Refined Salt"};
 	case "life_inv_glass": {"Glass"};
-	case "life_inv_diamond": {"Diamond Uncut"};
-	case "life_inv_diamondr": {"Diamond Cut"};
+	case "life_inv_diamond": {"Uncut Diamond"};
+	case "life_inv_diamondr": {"Cut Diamond"};
 	case "life_inv_tbacon": {"Tactical Bacon"};
 	case "life_inv_redgull": {"RedGull"};
 	case "life_inv_lockpick": {"Lockpick"};
 	case "life_inv_peach": {"Peach"};
-	case "life_inv_coke": {"Unprocessed Cocaine"};
-	case "life_inv_cokep": {"Processed Cocaine"};
+	case "life_inv_coke": {"Coca Leaves"};
+	case "life_inv_cokep": {"Cocaine"};
 	case "life_inv_spikeStrip": {"Spike Strip"};
 	case "life_inv_rock": {"Rock"};
 	case "life_inv_cement": {"Cement Bag"};
@@ -65,7 +65,7 @@ switch (_var) do
 	case "life_inv_mcrabs": {"Male Crab Small"};
 	case "life_inv_mcrab": {"Male Crab"};
 	case "life_inv_crabpot": {"Crab Pot"};
-	case "life_inv_coalore": {"Coal Ore"};
+	case "life_inv_coalore": {"Coal"};
 	case "life_inv_steel" : {"Steel"};
 	case "life_inv_defib" : {"Defibrilator"};
 	case "life_inv_log" : {"Wood Log"};

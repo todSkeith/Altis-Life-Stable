@@ -44,6 +44,7 @@ switch (_mode) do
 			case "logging" : {_var = "license_civ_logging"};
 			case "medicair" : {_var = "license_medic_air"};
 			case "home": {_var = "license_civ_home"};
+			case "c3": {_var = "license_civ_c3"};
 
 			default {_var = ""};
 		};
@@ -82,9 +83,7 @@ switch (_mode) do
 			case "license_civ_logging" : {_var = "logging"};
 			case "license_medic_air" : {_var = "medicair"};
 			case "license_civ_home": {_var = "home"};
-
-
-
+			case "license_civ_c3": {_var = "c3"};
 
 			default {_var = ""};
 		};

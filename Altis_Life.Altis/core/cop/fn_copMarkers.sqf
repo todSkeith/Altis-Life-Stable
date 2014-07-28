@@ -11,7 +11,7 @@ _cops = [];
 
 sleep 0.5;
 if(visibleMap) then {
-	{if(side _x == west) then {_cops set[count _cops,_x];}} foreach playableUnits; //Fetch list of cops / blufor
+	{if(side _x == west && "ItemGPS" in assignedItems _x) then {_cops set[count _cops,_x];}} foreach playableUnits; //Fetch list of cops / blufor
 	
 	//Create markers
 	{

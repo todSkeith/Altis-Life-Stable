@@ -45,18 +45,17 @@ if (isPlayer _unit) then
 	_unit setVelocity [0,0,0];
 	_unit allowDamage false;
 	_unit playMoveNow "AinjPpneMstpSnonWrflDnon_rolltoback";
-
+	hintC "You have been incapacitated. Please do not communicate with other players.";
 
 	while {_unit getVariable "unconscious"} do
 {
-		_unit switchMove "AinjPpneMstpSnonWrflDnon";
-		_unit enablesimulation false;
 		if(vehicle player != player && driver vehicle player == player) then
 		{
 			player action ["Eject",vehicle player];
 			titleText ["You can't drive in that state...","PLAIN"];
 		};
-
+		_unit switchMove "AinjPpneMstpSnonWrflDnon";
+		_unit enablesimulation false;
 		if (life_bleedout >= time) then {
 			
 			_hintbleedout = format["Bleedout in %1 seconds<br/>",round (life_bleedout - time)];

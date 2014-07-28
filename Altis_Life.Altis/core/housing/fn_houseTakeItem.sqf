@@ -5,8 +5,6 @@
 	
 	Description:
 	take an item from a house
-
-	Edited and Modified by: CDawg
 */
 private["_ctrl","_num","_index","_data","_old","_value","_weight","_diff"];
 disableSerialization;

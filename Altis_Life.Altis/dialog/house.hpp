@@ -72,7 +72,7 @@ class HouseMenu
 			idc = 12512;
 			text = "Buy";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
-			onButtonClick = "[_house] call life_fnc_buyHouse;";
+			onButtonClick = "[_house] call life_fnc_buyHouse; closeDialog 0;";
 			x = 0.4;
 			y = 0.4;
 			w = (6.25 / 40);
@@ -84,7 +84,7 @@ class HouseMenu
 			idc = 12516;
 			text = "Sell";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
-			onButtonClick = "[_house] call life_fnc_sellHouse;";
+			onButtonClick = "[_house] call life_fnc_sellHouse; closeDialog 0;";
 			x = 0.4;
 			y = 0.4;
 			w = (6.25 / 40);

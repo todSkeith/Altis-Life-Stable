@@ -13,6 +13,7 @@
 #include "shops.hpp"
 #include "ui.hpp"
 #include "admin_menu.hpp"
+#include "compensate.hpp"
 #include "cell_phone.hpp"
 #include "wanted_list.hpp"
 #include "ticket.hpp"
@@ -25,3 +26,4 @@
 #include "nightclub.hpp"
 #include "trunkHouse.hpp"
 #include "house.hpp"
+#include "confirm.hpp"

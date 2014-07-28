@@ -68,7 +68,7 @@ switch (_shop) do
 	
 	case "donator":
 	{
-		ctrlSetText[2505,"Donator Shop"];
+		ctrlSetText[2505,"Mercenary Shop"];
 	};
 	
 	case "sergeant":

@@ -40,6 +40,7 @@ if(count _itemInfo == 0) exitWith {hint "You don't have the items necessary"};
 //Setup vars.
 _oldItem = [];
 _vals = [];
+life_action_inUse = true;
 {_oldItem = _oldItem + [_x];} foreach (_itemInfo select 0);
 if(count _oldItem == 0) exitWith {hint "You don't have the items necessary"};
 {_vals = _vals + [missionNamespace getVariable ([_x,0] call life_fnc_varHandle)];} foreach _oldItem;
@@ -64,10 +65,19 @@ _progress progressSetPosition 0.01;
 _cP = 0.01;
 
 life_is_processing = true;
+
 if((!_hasLicense)&&(life_cash < _cost)) exitWith {
 	hint format["You need $%1 to process without a license!",[_cost] call life_fnc_numberText];
 	5 cutText ["","PLAIN"]; life_is_processing = false;
 };
+
+//Removes the old items
+{
+	if(!([false,_x,_oldVal] call life_fnc_handleInv)) exitWith {
+		5 cutText ["","PLAIN"]; life_is_processing = false;
+	};
+} foreach _oldItem;
+
 _delayInt = _oldVal * 0.03;
 while{true} do {
 	sleep _delayInt;
@@ -78,30 +88,28 @@ while{true} do {
 	if(player distance _vendor > 10) exitWith {};
 };
 
-if(player distance _vendor > 10) exitWith {hint "You need to stay within 10m to process."; 5 cutText ["","PLAIN"]; life_is_processing = false;};
-if((!_hasLicense)&&(life_cash < _cost)) exitWith {hint format["You need $%1 to process without a license!",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
-if(!(alive player)) exitWith {hint "You need to be alive to process."; 5 cutText ["","PLAIN"]; life_is_processing = false;};
-//Removes the old items
-{
-	if(!([false,_x,_oldVal] call life_fnc_handleInv)) exitWith {
-		5 cutText ["","PLAIN"]; life_is_processing = false;
-	};
-} foreach _oldItem;
+if(player distance _vendor > 10) exitWith {hint "You need to stay within 10m to process."; 5 cutText ["","PLAIN"]; life_is_processing = false; life_action_inUse = false;};
+if(!(alive player)) exitWith {hint "You need to be alive to process."; 5 cutText ["","PLAIN"]; life_is_processing = false; life_action_inUse = false;};
+if((!_hasLicense)&&(life_cash < _cost)) exitWith {hint format["You need $%1 to process without a license!",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false; life_action_inUse = false;};
 
 //Adds the new item
 if(!([true,_newItem,_oldVal] call life_fnc_handleInv)) exitWith {
 	5 cutText ["","PLAIN"];
 	{[true,_x,_oldVal] call life_fnc_handleInv;} foreach _oldItem;
 	life_is_processing = false;
+	life_action_inUse = false;
 };
 
 5 cutText ["","PLAIN"];
 if (_hasLicense) then {
 	titleText[format["You have processed your goods into %1",_itemName],"PLAIN"];
+	life_action_inUse = false;
 } else {
 	titleText[format["You have processed your goods into %1 for $%2",_itemName,[_cost] call life_fnc_numberText],"PLAIN"];
 	["cash","take",_cost] call life_fnc_updateCash;
+	life_action_inUse = false;
 };
 
 life_is_processing = false;
+life_action_inUse = false;
 //[[36, player, format["Processed %1 into %2", _oldVal, _itemName]],"ASY_fnc_logIt",false,false] spawn BIS_fnc_MP;

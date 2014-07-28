@@ -47,12 +47,12 @@ life_action_inUse = true;
 sleep 1.5;
 
 //Mine check
-if(_mine == "") exitWith {hint "You need to be in the crabbing zone!"};
+if(_mine == "") exitWith {hint "You need to be in the crabbing zone!"; life_action_inUse = false;};
 //if(vehicle player !isKindOf "Ship") exitWith {hint "You can only crab from the boat!";};
 
 
 _diff = [_mine,_val,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
-if(_diff == 0) exitWith {hint "Your inventory is full."};
+if(_diff == 0) exitWith {hint "Your inventory is full."; life_action_inUse = false;};
 
 sleep 10;
 

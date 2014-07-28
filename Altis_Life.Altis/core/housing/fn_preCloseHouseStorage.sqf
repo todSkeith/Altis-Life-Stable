@@ -4,8 +4,6 @@
 	
 	Description:
 	updates the house storage when the inventory menu gets closed
-
-	Edited and Modified by: CDawg
 */
 private["_house","_containers", "_trunk"];
 _house = cursorTarget;

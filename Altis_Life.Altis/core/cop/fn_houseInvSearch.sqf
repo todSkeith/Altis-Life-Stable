@@ -2,7 +2,7 @@
 /*
 */
 private["_vehicle","_vehicleInfo","_value"];
-_vehicle = cursorTarget;
+_vehicle = nearestObject [position player, "House"];
 if(isNull _vehicle) exitWith {hint "There is no house"};
 if(!(_vehicle isKindOf "House_F")) exitWith {};
 

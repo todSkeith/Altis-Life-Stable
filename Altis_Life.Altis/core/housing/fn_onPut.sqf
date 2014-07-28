@@ -20,7 +20,7 @@ if(_owner == "") exitWith {
 	_handle = [] spawn life_fnc_sessionUpdate;
 };
 
-if(typeOf _container == "Box_IND_WpsSpecial_F") then {
+if(typeOf _container == "B_supplyCrate_F") then {
 	_wc = getWeaponCargo _container;
 	_mc = getMagazineCargo _container;
 	_ic = getItemCargo _container;

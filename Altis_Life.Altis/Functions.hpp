@@ -21,6 +21,16 @@ class Life_Client_Core
 		class admingetID {};
 		class adminMenu {};
 		class adminQuery {};
+		class adminSpectate {}; 
+		class adminTeleport {};
+		class adminTpHere {}; 
+		class adminDebugCon {};
+		class adminCompensate {};
+		class adminAuthenticate {};
+		class adminCheckAuth {};
+		class adminKick {};
+		class adminRepairBuild {};
+		class adminBan {};
 	};
 
 	class Actions
@@ -82,10 +92,7 @@ class Life_Client_Core
 		class robAction {};
 		class sellTurtle {};
 		class payrepair {};
-		class gasman1 {};
-		class gasman2 {};
-		class gasman3 {};
-		class gasman4 {};
+		class robStation {};
 		class nclights {};
 		class ncLightsOn {};
 		class ncmusic {};
@@ -94,6 +101,7 @@ class Life_Client_Core
 		class ncflash {};
 		class fuel_consumption {};
 		class reviveHospital {};
+		class confirm {};
 	};
 
 	class Config
@@ -134,6 +142,7 @@ class Life_Client_Core
 		file = "core\session";
 		class sessionSetup {};
 		class houseSession {};
+		class houseWeaponInformation {};
 		class sessionReceive {};
 		class sessionUpdate {};
 		class quickSync {};
@@ -281,6 +290,7 @@ class Life_Client_Core
 		class seizePlayerWeaponAction {};
 		class radar {};
 		class questionDealer {};
+		class questionGasStation {};
 		class copInteractionMenu {};
 		class sirenLights {};
 		class licenseCheck {};
@@ -291,6 +301,8 @@ class Life_Client_Core
 		class houseOwnerSearch {};
         class houseInvSearch {};
         class raidHouse {};
+		class takeLeader {};
+		class trackBounty {};
 	};
 
 	class Medic
@@ -347,6 +359,7 @@ class Life_Client_Core
 		class chopShopMenu {};
 		class chopShopSelection {};
 		class chopShopSell {};
+		class donatorLevel {};
 	};
 
 	class Items

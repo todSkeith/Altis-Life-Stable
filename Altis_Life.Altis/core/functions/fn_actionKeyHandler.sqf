@@ -42,6 +42,8 @@ if(player distance _curTarget > ((boundingBox _curTarget select 1) select 0) + 2
 life_action_inUse = true;
  
 _isVehicle = if((_curTarget isKindOf "landVehicle") OR (_curTarget isKindOf "Ship") OR (_curTarget isKindOf "Air")) then {true} else {false};
+_isHouse = if(_curTarget isKindOf "House") then {TRUE} else {FALSE};
+
 _miscItems = ["Land_BottlePlastic_V1_F","Land_TacticalBacon_F","Land_Can_V3_F","Land_CanisterFuel_F","Land_Suitcase_F"];
 _animalTypes = ["Salema_F","Ornate_random_F","Mackerel_F","Tuna_F","Mullet_F","CatShark_F","Turtle_F"];
 _money = "Land_Money_F";
@@ -83,6 +85,11 @@ switch (true) do
         case (_isVehicle):
         {
                 [_curTarget] call life_fnc_vInteractionMenu;
+        };
+
+        case (_isHouse):
+        {
+                [_curTarget] call life_fnc_houseInteractionMenu;
         };
        
         //Animals

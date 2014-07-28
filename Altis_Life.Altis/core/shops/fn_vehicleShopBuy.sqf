@@ -22,25 +22,25 @@ switch(life_veh_shop) do
 		};
 	};
 
-	case "donator_1":
+	case "merc_1":
 	{
 		_sp = getMarkerPos "donator_1";
 		_dir = markerDir "donator_1";
 		if(count(nearestObjects[_sp,["Car","Ship","Air"],2]) > 0) then
 		{
-			_sp = getMarkerPos "donator_1_1";
-			_dir = markerDir "donator_1_1";
+			_sp = getMarkerPos "merc_1_1";
+			_dir = markerDir "merc_1_1";
 		};
 	};
 
-	case "donator_2":
+	case "merc_2":
 	{
-		_sp = getMarkerPos "donator_2";
-		_dir = markerDir "donator_2";
+		_sp = getMarkerPos "merc_2";
+		_dir = markerDir "merc_2";
 		if(count(nearestObjects[_sp,["Car","Ship","Air"],5]) > 0) then
 		{
-			_sp = getMarkerPos "donator_2_1";
-			_dir = markerDir "donator_2_1";
+			_sp = getMarkerPos "merc_2_1";
+			_dir = markerDir "merc_2_1";
 		};
 	};
 
@@ -197,16 +197,16 @@ switch(life_veh_shop) do
 		_dir = markerDir "cop_ship_1";
 	};
 
-	case "donator_heli":
+	case "merc_heli":
 	{
-		_sp = getMarkerPos "donator_heli";
-		_dir = markerDir "donator_heli";
+		_sp = getMarkerPos "merc_heli";
+		_dir = markerDir "mercr_heli";
 	};
 
-	case "donator_car":
+	case "merc_car":
 	{
-		_sp = getMarkerPos "donator_car";
-		_dir = markerDir "donator_car";
+		_sp = getMarkerPos "merc_car";
+		_dir = markerDir "merc_car";
 	};
 	case "cop_ship_2":
 	{

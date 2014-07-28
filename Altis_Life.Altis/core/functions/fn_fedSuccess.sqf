@@ -15,17 +15,17 @@ if(_funds == -1) exitWith {};
 if(!life_use_atm) exitWith {};
 sleep 45;
 
-if(_funds > life_atmcash) then
+if(life_has_insurance) then
 {
-	hint "Due to the robbery on the Federal Reserve you have lost a percentage of your money but you have went bankrupt.\n\nNext time buy some banking insurance on your next visit to a ATM to better protect your assets!";
-	life_atmcash = 0;
+	hint "The recent robbery on the Federal reserve has hit civilians where it hurts the most but thankfully you have banking insurance so you didn't lose a penny!\n\nHowever you have lost your banking insurance! Be sure to visit a ATM to renew your plan!";
+	life_has_insurance = false;
 }
 	else
 {
-	if(life_has_insurance) then
+	if(_funds > (life_atmcash - 35000)) then
 	{
-		hint "The recent robbery on the Federal reserve has hit civilians where it hurts the most but thankfully you have banking insurance so you didn't lose a penny!\n\nHowever you have lost your banking insurance! Be sure to visit a ATM to renew your plan!";
-		life_has_insurance = false;
+		hint "Due to the robbery on the Federal Reserve you have lost a percentage of your money, but you have gone bankrupt.\n\nNext time buy some banking insurance on your next visit to a ATM to better protect your assets!";
+		life_atmcash = 35000;
 	}
 		else
 	{

@@ -242,7 +242,7 @@ switch (true) do
 
 	case (_item in ["storage1","storage2"]):
     {
-        [_item] call life_fnc_placeStorage;
+        [_item] spawn life_fnc_placeStorage;
     };
 
 	default

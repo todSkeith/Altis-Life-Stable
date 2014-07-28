@@ -35,10 +35,11 @@ switch (_type) do
 	case "moonshine": {9500};
 	case "crabbing" : {5000};
 	case "steel" : {12500};
-	case "bh": {15000};
+	case "bh": {30000};
 	case "logging": {12500};
 	case "medicair" : {25000};
 	case "home": {100000};
+	case "c3": {50000};
 	{
 		/* STATEMENT */
 	};

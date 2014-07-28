@@ -19,6 +19,7 @@ switch (playerSide) do
 				_array set[count _array,[_x select 0,(missionNamespace getVariable (_x select 0))]];
 			};
 		} foreach life_licenses;
+		[] call life_fnc_saveGear;
 		_packet set[count _packet,_array];
 		_gear = cop_gear;
 		_packet set[count _packet,_gear];
